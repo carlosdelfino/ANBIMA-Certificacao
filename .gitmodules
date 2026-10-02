@@ -1,0 +1,3 @@
+[submodule "anbima-cert"]
+	path = projetos/anbima-cert
+	url = git@github.com:carlosdelfino/anbima-cert.git
