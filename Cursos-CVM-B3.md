@@ -1,4 +1,4 @@
-# Cursos gratuitos CVM e B3
+# Cursos e formação — CVM, B3, ANBIMA e complementos pagos
 
 > Catálogos e inscrições podem mudar. Acesse as plataformas e confirme disponibilidade, certificado e pré-requisitos antes de planejar a conclusão.
 
@@ -41,3 +41,20 @@ Cursos e trilhas sugeridos (gratuitos no hub; cadastro gratuito pode ser necess�
 3. ANBIMA Edu: programa detalhado e bibliografia CFG.
 4. CVM: fundos e ofertas; leitura direta das normas aplicáveis.
 5. B3: análise, derivativos e infraestrutura, conectando com projetos práticos.
+
+## Cursos pagos opcionais
+
+O curso pago deve preencher uma lacuna específica — não compre uma pós-graduação inteira apenas pela credencial. Confirme ementa, data de atualização e turmas diretamente com a instituição antes de contratar.
+
+- [Insper — Valuation: Avaliação de Empresas](https://ee.insper.edu.br/cursos/financas/valuation-avaliacao-de-empresas/) — útil no mês de valuation do [plano de 12 meses](plano_12_meses_web3_mercado_capitais_fii_infraestrutura_rwa.md).
+- [Insper — Project Finance: Teoria e Prática](https://ee.insper.edu.br/cursos/financas/project-finance-teoria-e-pratica/) — aprofunda DSCR, estrutura de dívida e contratos de projetos de infraestrutura.
+- [Insper — Investimentos no Mercado Imobiliário](https://ee.insper.edu.br/cursos/mercado-financeiro/investimentos-no-mercado-imobiliario/) — complementa a trilha de FII e renda imobiliária.
+- [FGV — Educação Executiva](https://educacao-executiva.fgv.br/) — catálogo para cursos de viabilidade imobiliária, valuation, infraestrutura, finanças corporativas e project finance; a oferta muda por período.
+
+## Referências oficiais do plano
+
+- [Resolução CVM 175 — versão consolidada](https://conteudo.cvm.gov.br/legislacao/resolucoes/resol175.html) — documento central do mês 2; a consolidação pode incluir alterações posteriores.
+- [ANBIMA — Educação e certificações](https://www.anbima.com.br/pt_br/educar/) — fonte oficial de CFG, CGA, CGE, editais e conteúdo programático.
+- [Página da certificação CFG](https://www.anbima.com.br/pt_br/educar/cfg.htm) — primeira certificação da trilha.
+- [Portal do Investidor — FII](https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/fundos-de-investimentos-imobiliarios-fii) — material introdutório do mês de fundos imobiliários.
+- [B3 Educação — trilha FII](https://edu.b3.com.br/pt/tipos-de-investimentos/renda-variavel/fii) — conteúdos de fundos imobiliários.

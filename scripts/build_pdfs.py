@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET_DIRS = ("CFG", "CGA", "CGE", "INTRODUÇÃO")
+TARGET_DIRS = ("CFG", "CGA", "CGE", "INTRODUÇÃO", "WEB3-RWA")
 MERMAID = re.compile(r"```mermaid\s*\n(.*?)\n```", re.S)
 
 
@@ -33,7 +33,8 @@ def convert(source: Path) -> None:
         subprocess.run([
             "pandoc", str(intermediate), "--from=markdown+tex_math_dollars+tex_math_single_backslash+pipe_tables",
             "--standalone", "--pdf-engine=lualatex", "--variable=geometry:margin=2cm",
-            "--variable=mainfont:Latin Modern Roman", "--output", str(output)
+            "--variable=mainfont:Latin Modern Roman", "--variable=monofont:DejaVu Sans Mono",
+            "--output", str(output)
         ], cwd=ROOT, check=True)
         print(f"OK {output.relative_to(ROOT)}")
 
