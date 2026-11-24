@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET_DIRS = ("CFG", "CGA", "CGE", "INTRODUÇÃO", "WEB3-RWA")
+TARGET_DIRS = ("CFG", "CGA", "CGE", "INTRODUÇÃO", "WEB3-RWA-E-STABLECOINS")
 MERMAID = re.compile(r"```mermaid\s*\n(.*?)\n```", re.S)
 
 
