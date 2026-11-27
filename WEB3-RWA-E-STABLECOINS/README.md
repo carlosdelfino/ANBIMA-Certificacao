@@ -1,4 +1,4 @@
-# WEB3-RWA — Infraestrutura digital para ativos reais tokenizados
+# WEB3-RWA-E-STABLECOINS — Infraestrutura digital, regulação e stablecoins para ativos reais tokenizados
 
 Trilha técnica derivada do [plano de 12 meses](../plano_12_meses_web3_mercado_capitais_fii_infraestrutura_rwa.md) para a formação **Financial Infrastructure & Tokenization Architect**, na interseção entre engenharia de software, mercado de capitais, fundos de investimento, infraestrutura e tokenização de ativos do mundo real (RWA).
 
@@ -51,6 +51,8 @@ Esta pasta corresponde aos meses 9 a 12 do plano: o ponto em que a formação de
 4. [Fundo de infraestrutura tokenizado](04-fundo-infra-tokenizado.md) — arquitetura do capstone, contratos, backend, dashboard.
 5. [Segurança e invariantes financeiros](05-seguranca-e-invariantes.md) — checklist de segurança e testes da economia do sistema.
 6. [Checklist do plano de 12 meses](06-checklist-plano-12-meses.md) — itens verificáveis por mês, marcos de certificação e rotina semanal.
+7. [Órgãos reguladores e normas](07-orgaos-reguladores-e-normas.md) — CMN, BCB e CVM na tokenização e no mercado cripto, normas por processo, complementações e revogações.
+8. [Stablecoins](08-stablecoins-regulamentacao.md) — regulamentação das stablecoins e regras de transação (Resoluções BCB 519/520/521, câmbio, autocustódia, moeda eletrônica).
 
 ## Método
 
