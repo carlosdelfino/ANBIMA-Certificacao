@@ -10,6 +10,44 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 TARGET_DIRS = ("CFG", "CGA", "CGE", "INTRODUÇÃO", "WEB3-RWA-E-STABLECOINS")
 MERMAID = re.compile(r"```mermaid\s*\n(.*?)\n```", re.S)
+CODE_SPAN = re.compile(r"```.*?```|`[^`\n]+`", re.S)
+MATH_SPAN = re.compile(r"\$\$.*?\$\$|\\\[.*?\\\]|\\\(.*?\\\)|\$[^$\n]+\$", re.S)
+ACCENTED = re.compile(r"[À-ÿ]+")
+MATH_SYMBOLS = {"≠": r"\neq", "≤": r"\leq", "≥": r"\geq", "≈": r"\approx"}
+
+
+def _fix_math_span(match: re.Match) -> str:
+    span = match.group(0)
+    for symbol, command in MATH_SYMBOLS.items():
+        span = span.replace(symbol, f" {command} ")
+    return ACCENTED.sub(lambda m: f"\\text{{{m.group(0)}}}", span)
+
+
+def _fix_text_segment(segment: str) -> str:
+    """Troca símbolos Unicode fora da matemática por comandos TeX em modo math."""
+    parts, last = [], 0
+    for match in MATH_SPAN.finditer(segment):
+        chunk = segment[last:match.start()]
+        for symbol, command in MATH_SYMBOLS.items():
+            chunk = chunk.replace(symbol, f"${command}$")
+        parts += [chunk, match.group(0)]
+        last = match.end()
+    chunk = segment[last:]
+    for symbol, command in MATH_SYMBOLS.items():
+        chunk = chunk.replace(symbol, f"${command}$")
+    parts.append(chunk)
+    return "".join(parts)
+
+
+def normalize_unicode(text: str) -> str:
+    """Substitui glifos ausentes nas fontes LaTeX, preservando blocos de código."""
+    parts, last = [], 0
+    for match in CODE_SPAN.finditer(text):
+        parts.append(_fix_text_segment(MATH_SPAN.sub(_fix_math_span, text[last:match.start()])))
+        parts.append(match.group(0))
+        last = match.end()
+    parts.append(_fix_text_segment(MATH_SPAN.sub(_fix_math_span, text[last:])))
+    return "".join(parts)
 
 
 def convert(source: Path) -> None:
@@ -27,6 +65,7 @@ def convert(source: Path) -> None:
             mmd.write_text(match.group(1), encoding="utf-8")
             subprocess.run(["mmdc", "-i", str(mmd), "-o", str(png), "-b", "transparent"], check=True)
             text = text.replace(match.group(0), f"![Diagrama {number}]({png.as_posix()})", 1)
+        text = normalize_unicode(text)
         intermediate = temp / source.name
         intermediate.write_text(text, encoding="utf-8")
         output = source.with_suffix(".pdf")
